@@ -1,4 +1,4 @@
-{% set zfs = salt.pillar.get('zfs') %}
+{% set zfs = salt['pillar.get']('zfs', {}) %}
 
 {% for zfs_dataset in zfs.get('fs', ()) %}
 zfs_dataset_{{ loop.index0 }}:
